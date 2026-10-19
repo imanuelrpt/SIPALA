@@ -1,0 +1,288 @@
+/* ==========================================================================
+   SIPALA — gaya aplikasi di atas Bootstrap 5.
+   Semua warna brand didefinisikan sebagai custom property agar mudah diubah.
+   ========================================================================== */
+
+:root {
+    --sipala-primary: #0d3b66;
+    --sipala-primary-600: #0a2e50;
+    --sipala-accent: #1d7874;
+    --sipala-soft: #eef4fa;
+    --sipala-border: #dbe4ee;
+}
+
+body {
+    background-color: #f5f7fa;
+}
+
+a {
+    text-decoration-thickness: from-font;
+}
+
+/* --------------------------------------------------------------------------
+   Navigasi & header
+   -------------------------------------------------------------------------- */
+
+.navbar-brand {
+    letter-spacing: .2px;
+}
+
+.avatar-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, .2);
+    font-size: .75rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.avatar-badge-lg {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.25rem;
+    background-color: var(--sipala-soft);
+    color: var(--sipala-primary);
+}
+
+/* --------------------------------------------------------------------------
+   Hero beranda
+   -------------------------------------------------------------------------- */
+
+.hero {
+    background: linear-gradient(135deg, var(--sipala-primary) 0%, var(--sipala-accent) 100%);
+    color: #fff;
+    border-radius: 1rem;
+}
+
+.hero .lead {
+    color: rgba(255, 255, 255, .85);
+}
+
+/* --------------------------------------------------------------------------
+   Kartu statistik dasbor
+   -------------------------------------------------------------------------- */
+
+.stat-card {
+    border: 1px solid var(--sipala-border);
+    border-radius: .85rem;
+    background-color: #fff;
+    transition: box-shadow .15s ease-in-out, transform .15s ease-in-out;
+}
+
+.stat-card:hover {
+    box-shadow: 0 .5rem 1.25rem rgba(13, 59, 102, .08);
+    transform: translateY(-2px);
+}
+
+.stat-card .stat-value {
+    font-size: 1.85rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--sipala-primary);
+}
+
+.stat-card .stat-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: .75rem;
+    font-size: 1.35rem;
+    background-color: var(--sipala-soft);
+    color: var(--sipala-primary);
+}
+
+/* --------------------------------------------------------------------------
+   Tabel
+   -------------------------------------------------------------------------- */
+
+.table-sipala thead th {
+    background-color: var(--sipala-soft);
+    color: var(--sipala-primary);
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    white-space: nowrap;
+}
+
+.table-sipala tbody td {
+    vertical-align: middle;
+}
+
+.table-sipala .col-ticket {
+    font-family: var(--bs-font-monospace);
+    font-size: .85rem;
+    white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Peta
+   -------------------------------------------------------------------------- */
+
+.map-canvas {
+    height: 26rem;
+    width: 100%;
+    border-radius: .75rem;
+    border: 1px solid var(--sipala-border);
+    background-color: #dfe6ee;
+    z-index: 0;
+}
+
+.map-canvas-lg {
+    height: 34rem;
+}
+
+.map-search-results {
+    max-height: 15rem;
+    overflow-y: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Linimasa (timeline) aduan
+   -------------------------------------------------------------------------- */
+
+.timeline {
+    position: relative;
+    margin: 0;
+    padding: 0 0 0 1.75rem;
+    list-style: none;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: .35rem;
+    bottom: .35rem;
+    left: .5rem;
+    width: 2px;
+    background-color: var(--sipala-border);
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 1.35rem;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    top: .3rem;
+    left: -1.5rem;
+    width: .85rem;
+    height: .85rem;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background-color: var(--sipala-primary);
+    box-shadow: 0 0 0 2px var(--sipala-border);
+}
+
+.timeline-item.timeline-response::before {
+    background-color: var(--sipala-accent);
+}
+
+.timeline-meta {
+    font-size: .8rem;
+}
+
+/* --------------------------------------------------------------------------
+   Unggahan berkas
+   -------------------------------------------------------------------------- */
+
+.upload-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+.attachment-thumb {
+    width: 7.5rem;
+    height: 7.5rem;
+    object-fit: cover;
+    border-radius: .5rem;
+    border: 1px solid var(--sipala-border);
+    background-color: #fff;
+}
+
+.attachment-link {
+    display: block;
+    position: relative;
+}
+
+.attachment-link .attachment-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: .25rem .4rem;
+    font-size: .7rem;
+    color: #fff;
+    background: rgba(0, 0, 0, .6);
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Lain-lain
+   -------------------------------------------------------------------------- */
+
+.rating-stars {
+    display: inline-flex;
+    gap: .15rem;
+    color: #f0a500;
+}
+
+.text-pre-wrap {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.card-header-tabs {
+    margin-bottom: -.5rem;
+}
+
+.empty-state {
+    padding: 3rem 1rem;
+    text-align: center;
+    color: var(--bs-secondary-color);
+}
+
+.empty-state i {
+    font-size: 2.5rem;
+    opacity: .5;
+}
+
+.map-popup-title {
+    font-weight: 600;
+}
+
+.invalid-feedback {
+    display: block;
+}
+
+@media (max-width: 767.98px) {
+    .map-canvas {
+        height: 20rem;
+    }
+
+    .stat-card .stat-value {
+        font-size: 1.5rem;
+    }
+}
+
+@media print {
+    .navbar,
+    footer,
+    .no-print,
+    .btn {
+        display: none !important;
+    }
+
+    body {
+        background: #fff;
+    }
+}
